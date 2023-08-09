@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-import { addAuthor, getAuthors } from "../api/authors";
+import { addAuthor } from "../api/authors";
 
 export function AuthorForm () {
     const [name, setName] = useState("")
@@ -13,13 +13,7 @@ export function AuthorForm () {
         }
     })
     
-    const authorsQuery = useQuery({
-        queryKey: ["authors"],
-        queryFn: () => getAuthors(),
-    })
-    const authors = authorsQuery.data!;
-    
-    function submitAuthor(e) {
+    function submitAuthor(e:React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         createAuthorsMutation.mutate({name})
       }

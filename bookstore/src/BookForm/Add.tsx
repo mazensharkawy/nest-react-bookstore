@@ -2,7 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {useState} from "react";
 import { addBook } from "../api/books";
 import { Navigate } from "react-router-dom";
-import { addAuthor, getAuthors } from "../api/authors";
+import { getAuthors } from "../api/authors";
 import { AuthorForm } from "./AuthorForm";
 
 function AddBookForm(){
@@ -24,7 +24,7 @@ function AddBookForm(){
     })
     const authors = authorsQuery.data!;
     
-    function submitBook(e) {
+    function submitBook(e:React.FormEvent<HTMLFormElement>) {
       e.preventDefault()
       if(!author) return
       createBooksMutation.mutate({title, author, publicationDate, image})

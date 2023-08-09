@@ -5,7 +5,7 @@ import editIcon from "../assets/edit.svg"
 import { Link } from "react-router-dom"
 
 const PLACEHOLDER_IMAGE ="https://cdn.pixabay.com/photo/2015/11/19/21/10/glasses-1052010_640.jpg"
-export default function Card({book, deleteBook}:{book:Book}) {
+export default function Card({book, deleteBook}:{book:Book, deleteBook:(id:number)=> void}) {
   const { id, title, author, publicationDate, image } = book
   return (
     <div className="bg-white shadow-md rounded-lg p-4">
