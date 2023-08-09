@@ -13,7 +13,6 @@ export class AuthorController {
 
   @Post()
   async addAuthor(@Body() dto: Author) {
-    console.log({ dto });
     return this.authorService.addAuthor(dto);
   }
 

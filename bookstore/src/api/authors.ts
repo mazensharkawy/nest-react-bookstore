@@ -4,18 +4,18 @@ import { Author } from "../types"
 
 export function getAuthors():Promise<Author[]> {
   return axios
-    .get("http://localhost:3000/api/authors")
+    .get("/api/authors")
     .then(({data}:{data: Author[]}) => data)
 }
 
 export function addAuthor(author: Author) {
   return axios
-    .post("http://localhost:3000/api/authors", author)
+    .post("/api/authors", author)
     .then(res => res.data)
 }
 
 export function deleteAuthor(id: number) {
   return axios
-    .delete(`http://localhost:3000/api/authors/${id}`)
+    .delete(`/api/authors/${id}`)
     .then(res => res.data)
 }

@@ -31,7 +31,6 @@ export class BookController {
 
   @Put('/:id')
   async updateBook(@Param('id') id: string, @Body() body: Book) {
-    console.log({ body });
     return this.bookService.updateBook(parseInt(id), body);
   }
 }

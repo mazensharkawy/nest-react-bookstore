@@ -11,7 +11,6 @@ export class AuthorService {
   }
 
   async addAuthor(author: Author) {
-    console.log({ author });
     return this.prisma.author.create({ data: author });
   }
 

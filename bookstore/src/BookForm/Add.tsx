@@ -38,7 +38,6 @@ function AddBookForm(){
             <h1 className='text-2xl'>Add a book</h1>
             <input required value={title} onChange={e=>setTitle(e.target.value)} className='border-2 rounded-md p-2' type="text" placeholder="Title"/>
             <select required value={author} onChange={e=>{
-            console.log({author: e.target.value})
             setAuthor(parseInt(e.target.value))
             }} className='border-2 rounded' placeholder="Author"
             >
