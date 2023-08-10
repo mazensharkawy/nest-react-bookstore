@@ -6,7 +6,11 @@
   color: black;
   background-color: white;
 }
-input {
+html,body {
+  color: black;
+  background-color: white;
+}
+input,select {
   color: black;
   background-color: white;
 }

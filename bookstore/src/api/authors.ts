@@ -16,6 +16,6 @@ export function addAuthor(author: Author) {
 
 export function deleteAuthor(id: number) {
   return axios
-    .delete(`/api/authors/${id}`)
+    .delete(`/api/authors/${parseInt(id)}`)
     .then(res => res.data)
 }
